@@ -1,0 +1,13 @@
+rr,spo2,sbp,pulse,temp,o2,cvpu,news2_aggregate,max_single_parameter,label,label_v1_rule,label_conservative,pred_v1,pred_v2,pred_v3,boundary,note
+16.0,98.0,128.0,72.0,36.9,0.0,0.0,0,0,0,0,0,0,0,0,False,clear low: textbook normal
+14.0,97.0,135.0,64.0,37.1,0.0,0.0,0,0,0,0,0,0,0,0,False,clear low
+18.0,99.0,122.0,80.0,36.6,0.0,0.0,0,0,0,0,0,0,0,0,False,clear low
+17.0,98.0,118.0,76.0,37.4,0.0,0.0,0,0,0,0,0,0,0,0,False,clear low
+22.0,94.0,105.0,98.0,38.4,0.0,0.0,6,2,1,1,2,1,1,2,False,clear medium: several 1-2 point parameters (aggregate 6)
+16.0,90.0,130.0,78.0,37.0,0.0,0.0,3,3,1,0,1,0,1,1,False,clear medium: single parameter scoring 3 (SpO2 90)
+16.0,97.0,88.0,84.0,36.8,0.0,0.0,3,3,1,0,1,0,1,1,False,clear medium: single parameter scoring 3 (SBP 88)
+26.0,89.0,92.0,118.0,38.6,1.0,0.0,13,3,2,2,2,2,2,2,False,clear high: aggregate well above 7
+30.0,85.0,84.0,135.0,39.4,1.0,1.0,19,3,2,2,2,2,2,2,False,clear high: deteriorating patient
+24.0,93.0,98.0,112.0,35.0,0.0,0.0,11,3,2,2,2,2,2,2,False,"clear high: hypothermic, aggregate 9"
+16.0,92.0,128.0,74.0,37.0,0.0,0.0,2,2,0,0,1,0,0,1,True,BOUNDARY: SpO2 92 is 2 points; one point lower and it is a 3 (medium)
+16.0,97.0,128.0,91.0,37.0,0.0,0.0,1,1,0,0,0,0,0,0,True,BOUNDARY: pulse 91 scores 1; one beat lower scores 0 (still low either way)

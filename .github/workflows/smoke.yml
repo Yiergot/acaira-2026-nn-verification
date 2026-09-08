@@ -1,0 +1,20 @@
+name: smoke test (x86_64 Linux, mirrors Colab)
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: bootstrap toolchain (same script as the notebooks)
+        run: VENV=$HOME/venv bash environment/colab_bootstrap.sh
+      - name: run every property on every model
+        run: |
+          export PATH="$HOME/venv/bin:$PATH"
+          LOGDIR=$RUNNER_TEMP/smoke bash src/smoke_test.sh
+      - name: typecheck all specifications
+        run: |
+          export PATH="$HOME/venv/bin:$PATH"
+          for f in specs/*.vcl; do echo "== $f"; vehicle typecheck -s "$f"; done

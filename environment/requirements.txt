@@ -1,0 +1,12 @@
+# Verification toolchain (installed into a Python 3.11 venv by colab_bootstrap.sh)
+vehicle-lang==0.27.1
+maraboupy==2.0.0      # wheels: Python 3.8-3.11, x86_64 Linux / x86_64 macOS only
+numpy<2
+idx2numpy
+onnx
+onnxruntime
+# Model-building extras (any Python >= 3.10; not needed to run the notebooks)
+# torch
+# scikit-learn
+# matplotlib
+# pandas

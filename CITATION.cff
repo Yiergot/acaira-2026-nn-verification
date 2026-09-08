@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite them as below."
+title: "Verifying neural networks — hands-on materials (ACM Europe Seasonal School on Responsible AI, 2026)"
+authors:
+  - family-names: Arnaboldi
+    given-names: Luca
+    affiliation: University of Birmingham
+date-released: 2026-09-16
+license: MIT
+repository-code: https://github.com/lucaarnaboldi/acaira-2026-nn-verification
+keywords: [neural network verification, Vehicle, Marabou, responsible AI, robustness, formal methods, teaching]
+references:
+  - type: generic
+    title: "The Vehicle tutorial: neural network verification with Vehicle"
+    url: https://vehicle-lang.github.io/tutorial/

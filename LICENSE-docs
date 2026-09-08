@@ -1,0 +1,7 @@
+The documents (docs/), specifications (specs/), synthetic data (data/) and trained models (models/) in this
+repository are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+Attribution: "Verifying neural networks — hands-on materials", Luca Arnaboldi, University of Birmingham, 2026,
+prepared for the ACM Europe Seasonal School on Responsible AI (ACAIRA, Aston University).
+Built on the Vehicle tutorial (vehicle-lang.github.io/tutorial), BSD-3-Clause.

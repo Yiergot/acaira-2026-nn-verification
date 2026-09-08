@@ -1,0 +1,11 @@
+income,debt_ratio,history_years,defaults,age,protected,model_v2_decision,margin_logits,borderline
+200.0,0.07,17.85,1.0,33.08,0.0,approve,13.49,False
+172.37,0.17,16.19,0.0,37.93,0.0,approve,12.622,False
+151.94,0.18,8.35,0.0,29.29,0.0,approve,10.757,False
+171.01,0.4,9.78,0.0,18.93,0.0,approve,10.682,False
+19.81,0.34,10.87,4.0,40.78,1.0,deny,-14.953,False
+15.95,0.78,8.24,2.0,24.16,1.0,deny,-14.612,False
+17.19,0.5,12.45,3.0,24.42,1.0,deny,-14.092,False
+15.98,0.7,4.14,2.0,55.36,1.0,deny,-13.939,False
+28.99,0.18,9.43,0.0,32.7,0.0,approve,0.0,True
+52.13,0.38,4.78,0.0,56.52,0.0,approve,0.0,True
