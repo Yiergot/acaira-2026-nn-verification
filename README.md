@@ -21,14 +21,14 @@ competition reads, so nothing here is tied to one tool.
 
 | | Open in Colab | What you do | Time |
 |---|---|---|---|
-| **01** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lucaarnaboldi/acaira-2026-nn-verification/blob/main/notebooks/01-triage-verification.ipynb) | Verify a neural triage network against clinical hard limits. Watch a 96 %-accurate model fail, read the failing patient, repair the model, prove the properties, then probe robustness to measurement noise. | ~35 min |
-| **02** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lucaarnaboldi/acaira-2026-nn-verification/blob/main/notebooks/02-fairness-stretch.ipynb) | Stretch: state *fairness* as a verifiable property of a loan-approval network using a twin-network trick, and see why removing a protected attribute is not enough. | ~20 min |
+| **01** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yiergot/acaira-2026-nn-verification/blob/main/notebooks/01-triage-verification.ipynb) | Verify a neural triage network against clinical hard limits. Watch a 96 %-accurate model fail, read the failing patient, repair the model, prove the properties, then probe robustness to measurement noise. | ~35 min |
+| **02** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yiergot/acaira-2026-nn-verification/blob/main/notebooks/02-fairness-stretch.ipynb) | Stretch: state *fairness* as a verifiable property of a loan-approval network using a twin-network trick, and see why removing a protected attribute is not enough. | ~20 min |
 
 No laptop? The **[field guide](docs/build/field-guide.pdf)** reproduces every step with its expected output, and the
 **[role cards](docs/build/debate-role-cards.pdf)** + **[protocol](docs/build/debate-protocol.pdf)** run the debate
 without a computer. Executed copies of both notebooks are in [`notebooks/executed/`](notebooks/executed/).
 
-*(The Colab badges point at the repository URL placeholder `lucaarnaboldi/acaira-2026-nn-verification`; adjust if the
+*(The Colab badges point at the repository URL placeholder `Yiergot/acaira-2026-nn-verification`; adjust if the
 repository lives elsewhere.)*
 
 ## What is in the box

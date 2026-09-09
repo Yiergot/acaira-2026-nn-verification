@@ -16,7 +16,7 @@ SETUP = r'''
 # We never import the verifier into this kernel; we call the `vehicle` command-line tool.
 import os, sys, subprocess, pathlib, shutil, time
 
-REPO_URL = "https://github.com/lucaarnaboldi/acaira-2026-nn-verification"   # <- repository (placeholder until published)
+REPO_URL = "https://github.com/Yiergot/acaira-2026-nn-verification"   # <- repository (placeholder until published)
 IN_COLAB = "google.colab" in sys.modules or os.path.exists("/content")
 
 here = pathlib.Path.cwd()

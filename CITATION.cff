@@ -7,7 +7,7 @@ authors:
     affiliation: University of Birmingham
 date-released: 2026-09-16
 license: MIT
-repository-code: https://github.com/lucaarnaboldi/acaira-2026-nn-verification
+repository-code: https://github.com/Yiergot/acaira-2026-nn-verification
 keywords: [neural network verification, Vehicle, Marabou, responsible AI, robustness, formal methods, teaching]
 references:
   - type: generic
