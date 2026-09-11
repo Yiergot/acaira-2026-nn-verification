@@ -5,6 +5,7 @@ authors:
   - family-names: Arnaboldi
     given-names: Luca
     affiliation: University of Birmingham
+    email: l.arnaboldi@bham.ac.uk
 date-released: 2026-09-16
 license: MIT
 repository-code: https://github.com/Yiergot/acaira-2026-nn-verification

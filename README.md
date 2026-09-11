@@ -78,4 +78,4 @@ are theirs. The twin-network encoding of fairness follows Athavale et al., "Veri
 in Neural Networks with Confidence", CAV 2024. NEWS2 is © Royal College of Physicians 2017; only the published
 thresholds are re-stated here.
 
-Contact: see the speaker's institutional page at the University of Birmingham.
+Contact: Dr Luca Arnaboldi, University of Birmingham — l.arnaboldi@bham.ac.uk
