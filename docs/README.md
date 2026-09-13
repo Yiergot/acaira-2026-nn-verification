@@ -11,6 +11,8 @@ All LaTeX (LuaLaTeX, TeX Live 2025; fonts ship with TeX Live), sharing `style/bl
 | `debate-protocol.pdf` | NNV-DP | A 20-minute facilitator-free protocol for the debate |
 | `spec-your-system-worksheet.pdf` | NNV-WS | One page to write a property for your own project |
 | `reading-list.pdf` | NNV-RL | Annotated sources for everything cited |
+| `judging-scoresheet.pdf` | NNV-JS | One page per team: eight criteria (people, principle made concrete, evidence with scope, assurance argument, limits, accountability, progress, communication), tie-breakers, feedback notes |
+| `mentor-question-card.pdf` | NNV-MQ | Five questions for any stage plus stage-specific ones from pitch to final demo |
 
 Build notes: `make` runs `latexmk -lualatex` with `-output-directory=build` and `TEXMFOUTPUT=build`, which tcolorbox needs to write and re-read its temporary `.listing` files; `make clean` removes the auxiliary files. Every terminal output quoted in the field guide comes from a real run on 8 September 2026 (x86_64 environment).
 
