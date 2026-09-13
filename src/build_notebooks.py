@@ -40,13 +40,18 @@ else:
     os.environ["PATH"] = f"{VENV}/bin:" + os.environ["PATH"]
     print(f"bootstrap took {time.time() - t0:.0f} s")
 
-# small helpers for THIS kernel (plain Python, no verifier)
-subprocess.run([sys.executable, "-m", "pip", "install", "-q", "onnxruntime", "idx2numpy", "matplotlib", "pandas"],
-               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+# Python packages for THIS kernel (plain Python, no verifier): everything the notebooks import.
+KERNEL_PACKAGES = ["numpy", "pandas", "matplotlib", "onnx", "onnxruntime", "idx2numpy"]
+r = subprocess.run([sys.executable, "-m", "pip", "install", "-q", *KERNEL_PACKAGES], capture_output=True, text=True)
+if r.returncode != 0:
+    print(r.stdout[-2000:], r.stderr[-2000:])
+import importlib
+missing = [m for m in KERNEL_PACKAGES if importlib.util.find_spec(m) is None]
+print("kernel packages:", ", ".join(f"{m} OK" for m in KERNEL_PACKAGES if m not in missing) + (f"  MISSING: {missing}" if missing else ""))
 sys.path.insert(0, str(ROOT / "src"))
 print("vehicle", subprocess.run(["vehicle", "--version"], capture_output=True, text=True).stdout.strip(),
       "| Marabou at", shutil.which("Marabou"))
-print("OK - ready.")
+print("OK - ready." if not missing else "NOT ready: re-run this cell, or `pip install` the missing packages.")
 '''
 
 HELPERS = r'''

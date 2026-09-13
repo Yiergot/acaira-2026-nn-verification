@@ -7,7 +7,9 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends curl ca-certificates git time \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir uv jupyter nbconvert nbformat matplotlib pandas onnxruntime onnx "numpy<2" idx2numpy
+# Only what Colab itself ships (numpy, pandas, matplotlib) plus Jupyter for the runner: the notebooks'
+# setup cell must install the rest (onnx, onnxruntime, idx2numpy), exactly as it has to on Colab.
+RUN pip install --no-cache-dir uv jupyter nbconvert nbformat matplotlib pandas numpy
 
 ENV VENV=/content/venv
 COPY colab_bootstrap.sh /opt/colab_bootstrap.sh
