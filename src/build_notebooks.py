@@ -45,7 +45,7 @@ KERNEL_PACKAGES = ["numpy", "pandas", "matplotlib", "onnx", "onnxruntime", "idx2
 r = subprocess.run([sys.executable, "-m", "pip", "install", "-q", *KERNEL_PACKAGES], capture_output=True, text=True)
 if r.returncode != 0:
     print(r.stdout[-2000:], r.stderr[-2000:])
-import importlib
+import importlib.util
 missing = [m for m in KERNEL_PACKAGES if importlib.util.find_spec(m) is None]
 print("kernel packages:", ", ".join(f"{m} OK" for m in KERNEL_PACKAGES if m not in missing) + (f"  MISSING: {missing}" if missing else ""))
 sys.path.insert(0, str(ROOT / "src"))
