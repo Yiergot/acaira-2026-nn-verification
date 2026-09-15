@@ -160,7 +160,7 @@ md(r'''
 
 Run the cell below once. It fetches the materials, creates a Python 3.11 environment with the verifier (Colab's own Python is too new for the solver's wheels), and prints `OK`. If Colab restarts the runtime, just run it again.
 
-**Expected output:** the working directory, a few bootstrap lines, then `vehicle 0.27.1 | Marabou at /content/venv/bin/Marabou` and `OK - ready.`
+**Expected output:** the working directory, a few bootstrap lines, a `kernel packages: numpy OK, pandas OK, …` line, then `vehicle 0.27.1 | Marabou at /content/venv/bin/Marabou` and `OK - ready.`
 '''),
 code(SETUP),
 md(r'''
@@ -182,7 +182,7 @@ Three networks were trained on the same synthetic patients (`src/train.py`):
 | `triage-v2` | the correct NEWS2 bands, ordinary training | good accuracy; is that enough? |
 | `triage-v3` | the correct bands **plus the properties below as extra training losses** and a one-unit safety margin | we will see |
 
-**Expected output:** class balance of the data, a table of accuracies (v1 ≈ 96 % on its own labels but ≈ 88 % on the correct ones; v2 ≈ 96 %; v3 ≈ 92 % — it deliberately over-triages at the thresholds), and the five ONNX nodes.
+**Expected output:** class balance of the data, a table of accuracies (v1 ≈ 95 % on its own labels but ≈ 87 % on the correct ones; v2 ≈ 96 %; v3 ≈ 92 % — it deliberately over-triages at the thresholds), and the five ONNX nodes.
 '''),
 code(r'''
 df = pd.read_csv("data/triage-synthetic.csv")
@@ -367,15 +367,15 @@ else:
 md(r'''
 ## 10 · Take it to the debate
 
-You have seen three answers a verifier can give — a proof, a counterexample in your own units, a timeout — and one thing it can never give: the decision of what to demand. Pick a scenario card from `docs/debate-role-cards.pdf` (medical triage, authentication, autonomous control), follow the 20-minute protocol in `docs/debate-protocol.pdf`, and fill the decision sheet: *which region, which ε or margin, what happens on a counterexample, who signs.*
+You have seen three answers a verifier can give — a proof, a counterexample in your own units, a timeout — and one thing it can never give: the decision of what to demand. Pick a scenario card from `docs/build/debate-role-cards.pdf` (medical triage, authentication, autonomous control), follow the 20-minute protocol in `docs/build/debate-protocol.pdf`, and fill the decision sheet: *which region, which ε or margin, what happens on a counterexample, who signs.*
 
-Then, for **your own project**, use `docs/spec-your-system-worksheet.pdf`: one requirement as a sentence about *every* input in a region, the same sentence in pseudo-specification, what a counterexample would look like, and what cannot be verified this way (and how you will address it instead).
+Then, for **your own project**, use `docs/build/spec-your-system-worksheet.pdf`: one requirement as a sentence about *every* input in a region, the same sentence in pseudo-specification, what a counterexample would look like, and what cannot be verified this way (and how you will address it instead).
 
 ### How these materials were built (for the curious)
 `src/news2.py` re-states the NEWS2 thresholds and defines the class of a real-valued input as the class of its charted (truncated) reading, so every specification threshold sits a full unit away from where the labels change. `src/generate_data.py` samples 40 000 patients (a "typical ward" mixture plus uniform coverage of the whole box, because a verifier explores the whole box). `src/train.py` trains the three models with normalisation folded into the first layer so the ONNX takes clinical units and the solver sees only `Gemm` and `Relu`; v3 adds the property losses and can run a counterexample-guided repair loop against the real verifier. `src/smoke_test.sh` re-verifies everything. Two things that did *not* work are recorded in the field guide: rounding instead of truncating (an infinitely sharp step at 90.5), and repairing counterexamples one at a time (whack-a-mole).
 
 ### Further reading
-Vehicle tutorial · Katz et al., *Reluplex* (CAV 2017) · VNN-COMP 2025 report (arXiv:2512.19007) · Cordeiro et al., *Neural Network Verification is a Programming Language Challenge* (ESOP 2025) · Sirman et al., *Vancomycert* (SAIV 2026) — full list in `docs/reading-list.pdf`.
+Vehicle tutorial · Katz et al., *Reluplex* (CAV 2017) · VNN-COMP 2025 report (arXiv:2512.19007) · Cordeiro et al., *Neural Network Verification is a Programming Language Challenge* (ESOP 2025) · Sirman et al., *Vancomycert* (SAIV 2026) — full list in `docs/build/reading-list.pdf`.
 '''),
 ]
 nb1.metadata = {"kernelspec": {"name": "python3", "display_name": "Python 3"}, "language_info": {"name": "python"},
@@ -487,7 +487,7 @@ md(r'''
 
 `specs/loan.vcl` states two other kinds of property on `loan-v1/v2` directly: a **region** property ("a plainly strong applicant is approved, whatever the flag") and **local robustness** ("a small change in reported income never flips the decision") around ten evaluation applicants (eight confident, two borderline).
 
-**Expected output:** run it and read what the verifier says — the region property may well be *falsified* at a corner of the box (income 200 k£, age 90, …) where the model has extrapolated: report that honestly, it is a finding about the model, not a bug in the verifier. Income robustness: the confident applicants stay stable up to several thousand pounds; the two borderline ones flip at the smallest ε.
+**Expected output:** in our runs both region properties are VERIFIED for v1 and for v2 (about a second each). Read what *your* run says: if a verifier ever returns a counterexample at a corner of the box (income 200 k£, age 90, …), that is a finding about the model's extrapolation, not a bug in the verifier — report it honestly. Income robustness: the eight confident applicants stay stable even at ±10 k£; the two borderline ones flip at the smallest ε (8/10 throughout).
 '''),
 code(r'''
 for m in ("v1", "v2"):
