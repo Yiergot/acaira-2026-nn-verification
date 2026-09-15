@@ -367,15 +367,15 @@ else:
 md(r'''
 ## 10 · Take it to the debate
 
-You have seen three answers a verifier can give — a proof, a counterexample in your own units, a timeout — and one thing it can never give: the decision of what to demand. Pick a scenario card from `docs/build/debate-role-cards.pdf` (medical triage, authentication, autonomous control), follow the 20-minute protocol in `docs/build/debate-protocol.pdf`, and fill the decision sheet: *which region, which ε or margin, what happens on a counterexample, who signs.*
+You have seen three answers a verifier can give — a proof, a counterexample in your own units, a timeout — and one thing it can never give: the decision of what to demand. Pick a scenario card from `docs/debate-role-cards.pdf` (medical triage, authentication, autonomous control), follow the 20-minute protocol in `docs/debate-protocol.pdf`, and fill the decision sheet: *which region, which ε or margin, what happens on a counterexample, who signs.*
 
-Then, for **your own project**, use `docs/build/spec-your-system-worksheet.pdf`: one requirement as a sentence about *every* input in a region, the same sentence in pseudo-specification, what a counterexample would look like, and what cannot be verified this way (and how you will address it instead).
+Then, for **your own project**, use `docs/spec-your-system-worksheet.pdf`: one requirement as a sentence about *every* input in a region, the same sentence in pseudo-specification, what a counterexample would look like, and what cannot be verified this way (and how you will address it instead).
 
 ### How these materials were built (for the curious)
 `src/news2.py` re-states the NEWS2 thresholds and defines the class of a real-valued input as the class of its charted (truncated) reading, so every specification threshold sits a full unit away from where the labels change. `src/generate_data.py` samples 40 000 patients (a "typical ward" mixture plus uniform coverage of the whole box, because a verifier explores the whole box). `src/train.py` trains the three models with normalisation folded into the first layer so the ONNX takes clinical units and the solver sees only `Gemm` and `Relu`; v3 adds the property losses and can run a counterexample-guided repair loop against the real verifier. `src/smoke_test.sh` re-verifies everything. Two things that did *not* work are recorded in the field guide: rounding instead of truncating (an infinitely sharp step at 90.5), and repairing counterexamples one at a time (whack-a-mole).
 
 ### Further reading
-Vehicle tutorial · Katz et al., *Reluplex* (CAV 2017) · VNN-COMP 2025 report (arXiv:2512.19007) · Cordeiro et al., *Neural Network Verification is a Programming Language Challenge* (ESOP 2025) · Sirman et al., *Vancomycert* (SAIV 2026) — full list in `docs/build/reading-list.pdf`.
+Vehicle tutorial · Katz et al., *Reluplex* (CAV 2017) · VNN-COMP 2025 report (arXiv:2512.19007) · Cordeiro et al., *Neural Network Verification is a Programming Language Challenge* (ESOP 2025) · Sirman et al., *Vancomycert* (SAIV 2026) — full list in `docs/reading-list.pdf`.
 '''),
 ]
 nb1.metadata = {"kernelspec": {"name": "python3", "display_name": "Python 3"}, "language_info": {"name": "python"},

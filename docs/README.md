@@ -1,7 +1,8 @@
 # Participant documents
 
-All LaTeX (LuaLaTeX, TeX Live 2025; fonts ship with TeX Live), sharing `style/blueprintdoc.sty`. Build everything with
-`make` (PDFs land in `build/`).
+All LaTeX (LuaLaTeX, TeX Live 2025; fonts ship with TeX Live), sharing `style/blueprintdoc.sty`. Run `make` to rebuild:
+each PDF is written beside its `.tex` source, and every compiler by-product goes to the git-ignored `.aux/` directory
+(`make clean` removes it).
 
 | PDF | Code | What it is |
 |---|---|---|
