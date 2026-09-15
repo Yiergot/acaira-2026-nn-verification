@@ -1,7 +1,7 @@
 # Verifying neural networks — hands-on materials
 
 *ACM Europe Seasonal School on Responsible AI: Concepts and Applications · Aston University, Birmingham · 16 September 2026*
-*Plenary and drop-in session by Dr Luca Arnaboldi (University of Birmingham).*
+*Plenary by Dr Luca Arnaboldi (University of Birmingham). The hands-on materials below are self-paced: work through them whenever you like.*
 
 Testing a neural network tells you about the inputs you tried. **Verification** tells you about the inputs you did not:
 it either *proves* that a property holds for **every** input in a region, or hands you a concrete **counterexample**.
