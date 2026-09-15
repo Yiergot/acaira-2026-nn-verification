@@ -41,7 +41,7 @@ repository lives elsewhere.)*
 | `data/` | Synthetic datasets (CSV) and the small evaluation sets in idx format used by the specs |
 | `src/` | How everything was built: `news2.py` (labelling rule), `generate_data.py`, `train.py`, `make_idx.py`, `loan.py`, `smoke_test.sh` |
 | `environment/` | `colab_bootstrap.sh` (Python 3.11 venv with `vehicle-lang` + `maraboupy`), `Dockerfile` mirroring Colab, `local-install.md` |
-| `docs/` | LaTeX sources and PDFs: field guide, cheat sheet, debate role cards, debate protocol, "specify your system" worksheet, reading list |
+| `docs/` | Printable PDFs: field guide, cheat sheet, debate role cards and protocol, "specify your system" worksheet, reading list, judging scoresheet, mentor question card |
 
 ### The three triage models, in one table
 

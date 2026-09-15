@@ -6,3 +6,9 @@ __pycache__/
 venv/
 .aux/
 tmp/
+
+# The participant documents are published as PDFs only; their LaTeX sources and
+# build machinery stay with the author.
+docs/*.tex
+docs/style/
+docs/Makefile
